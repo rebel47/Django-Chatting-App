@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block title %}Profile{% endblock title %} {% block body %}
+
+<style>
+    .bottomSpace {
+        padding-bottom: 365px;
+    }
+</style>
+
+<div class="form-control bottomSpace">
+    <a href="/logout">Logout Here</a>
+
+    <table class="table table-bordered table-light">
+        <tr>
+            <th>First Name</th>
+            <td>{{request.user.first_name}}</td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td>{{request.user.last_name}}</td>
+        </tr>
+        <tr>
+            <th>User Name</th>
+            <td>{{request.user}}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{request.user.email}}</td>
+        </tr>
+    </table>
+    <button onclick="location.href = 'edit_profile'" class="btn btn-primary">Edit</button>
+    <button onclick="location.href = 'chat'" class="btn btn-primary">Chat</button>
+
+</div>
+
+{% endblock body %}
